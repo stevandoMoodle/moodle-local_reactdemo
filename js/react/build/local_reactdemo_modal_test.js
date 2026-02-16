@@ -55,15 +55,17 @@ function withProfiler(Component, id) {
 }
 __name(withProfiler, "withProfiler");
 
-// public/local/reactdemo/js/react/src/local_reactdemo_modal_test.tsx
-import React from "react";
-import { Button } from "@moodlehq/design-system";
+// public/local/reactdemo/js/react/src/helper.ts
 function requireAmd(mod) {
   return new Promise((resolve, reject) => {
     __require([mod], resolve, reject);
   });
 }
 __name(requireAmd, "requireAmd");
+
+// public/local/reactdemo/js/react/src/local_reactdemo_modal_test.tsx
+import React from "react";
+import { Button } from "@moodlehq/design-system";
 async function getString(key, component, params = {}) {
   const str = await requireAmd("core/str");
   return str.get_string(key, component, params);

@@ -1,16 +1,10 @@
 import React from "react";
+import requireAmd from './helper';
 
 type Props = {
     label: string;
     message?: string;
 };
-
-function requireAmd(mod: string) {
-    return new Promise<any>((resolve, reject) => {
-        // Use any to avoid TypeScript errors with require.
-        (require as any)([mod], resolve, reject);
-    });
-}
 
 async function showMoodlePopup(message: string) {
     const Notification = await requireAmd("core/notification");
@@ -25,7 +19,7 @@ export default function Button({
     const handleClick = () => {
         showMoodlePopup(message).catch((e) => {
             window.console.error("Failed to show Moodle popup", e);
-            window.alert(message); // fallback
+            window.alert(message); // Fallback
         });
     };
 

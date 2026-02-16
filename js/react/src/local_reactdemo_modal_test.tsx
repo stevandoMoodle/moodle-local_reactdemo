@@ -1,12 +1,7 @@
 import React from "react";
 import {Button} from "@moodlehq/design-system";
 import { withProfiler } from "@moodle/lms/core/profiler";
-
-function requireAmd(mod) {
-  return new Promise((resolve, reject) => {
-    require([mod], resolve, reject);
-  });
-}
+import requireAmd from './helper';
 
 async function getString(key, component, params = {}) {
   const str = await requireAmd("core/str");
