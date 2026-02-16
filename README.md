@@ -8,4 +8,5 @@ Installation
 2. Visit the Moodle admin page (/admin) to install
 
 Access the react demo plugin
+------------
 1. Go to home page and click on "More" menu and click on "React demo"
