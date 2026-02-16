@@ -3,11 +3,24 @@ import {Button} from "@moodlehq/design-system";
 import { withProfiler } from "@moodle/lms/core/profiler";
 import requireAmd from './helper';
 
+/**
+ *
+ * @param {string} key is a string key
+ * @param {string} component is a component name
+ * @param {Array} params is array of data
+ * @returns {Promise}
+ */
 async function getString(key, component, params = {}) {
   const str = await requireAmd("core/str");
   return str.get_string(key, component, params);
 }
 
+/**
+ * Loads a modal form.
+ *
+ * @param {object} props object properties sent from renderer
+ * @param {Event} event
+ */
 const loadModalForm = async(props, event) => {
   event?.preventDefault();
   const ModalForm = await requireAmd("core_form/modalform");
@@ -21,6 +34,11 @@ const loadModalForm = async(props, event) => {
   form.show();
 };
 
+/**
+ * Renders react components.
+ * @param {object} props
+ * @returns A JSX.Element representing the component UI
+ */
 function App(props) {
   const [tick, setTick] = React.useState(0);
   window.console.log(tick);
@@ -50,6 +68,11 @@ function App(props) {
   );
 }
 
+/**
+ * Export the App.
+ * @param {object} props
+ * @returns A JSX.Element representing the component UI
+ */
 export default function init(props = {}) {
   const ProfiledApp = withProfiler(App, "App");
   return <ProfiledApp {...props} />;
