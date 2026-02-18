@@ -61,7 +61,18 @@
     "contextid": "{{contextid}}"
   },
   "id": "local-reactdemo-a",
-  "class": "p-3 border rounded"
+  "class": "p-3 border rounded mb-3"
 }
 <p>Loading component A...</p>
+{{/react}}
+
+<h4>React_autoinit API</h4>
+{{#react}}
+{
+  "component": "@local_reactdemo/local_reactdemo_autoinit_api",
+  "props": {},
+  "id": "local-reactdemo-autoinit-api",
+  "class": "p-3 border rounded mb-3"
+}
+<p>Loading react_autoinit API...</p>
 {{/react}}
