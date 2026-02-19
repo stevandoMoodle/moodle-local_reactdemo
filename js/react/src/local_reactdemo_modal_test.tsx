@@ -1,6 +1,5 @@
 import React from "react";
 import {Button} from "@moodlehq/design-system";
-import { withProfiler } from "@moodle/lms/core/profiler";
 import requireAmd from './helper';
 
 /**
@@ -74,6 +73,5 @@ function App(props) {
  * @returns A JSX.Element representing the component UI
  */
 export default function init(props = {}) {
-  const ProfiledApp = withProfiler(App, "App");
-  return <ProfiledApp {...props} />;
+  return <App {...props} />;
 }
