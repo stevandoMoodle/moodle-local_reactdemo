@@ -1,5 +1,3 @@
-import React from "react";
-
 /**
  * New type Props.
  */
@@ -11,7 +9,7 @@ type Props = { who: string };
  * @param {Props} Props passed from template.
  * @returns A JSX.Element representing the component UI
  */
-export default function LocalreactdemoTest({ who }: Props) {
+export default function LocalreactdemoTest({who}: Props) {
     return (
         <div>
             <strong>Hello from local_reactdemo 👋</strong>
