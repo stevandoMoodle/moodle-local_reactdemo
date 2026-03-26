@@ -26,8 +26,8 @@ const loadModalForm = async(props, event) => {
   const modalHeader = await getString("modal_header", "local_reactdemo");
   const form = new ModalForm({
     formClass: "local_reactdemo\\simple2complex_form",
-    args: { contextid: props.contextid },
-    modalConfig: { title: modalHeader },
+    args: {contextid: props.contextid},
+    modalConfig: {title: modalHeader},
     returnFocus: event?.currentTarget ?? null,
   });
   form.show();
